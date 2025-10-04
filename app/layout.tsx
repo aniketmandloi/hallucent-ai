@@ -4,21 +4,21 @@ import { ThemeProvider } from "../components/provider";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
-  title: "Next.js Starter Kit - Launch Your SAAS",
+  title: "HallucentAI - Detect AI Hallucinations in Real-Time",
   description:
-    "A modern, full-stack Next.js starter kit with authentication, payments, and dashboard. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
+    "Advanced AI hallucination detection platform. Ensure your AI-generated content is accurate, reliable, and trustworthy with real-time verification and multi-model support.",
   openGraph: {
-    title: "Next.js Starter Kit",
+    title: "HallucentAI - AI Hallucination Detection",
     description:
-      "A modern, full-stack Next.js starter kit with authentication, payments, and dashboard. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-    url: "nextstarter.xyz",
-    siteName: "Next.js Starter Kit",
+      "Advanced AI hallucination detection platform. Ensure your AI-generated content is accurate, reliable, and trustworthy with real-time verification.",
+    url: "hallucentai.com",
+    siteName: "HallucentAI",
     images: [
       {
         url: "https://jdj14ctwppwprnqu.public.blob.vercel-storage.com/nsk-w9fFwBBmLDLxrB896I4xqngTUEEovS.png",
         width: 1200,
         height: 630,
-        alt: "Next.js Starter Kit",
+        alt: "HallucentAI - AI Hallucination Detection",
       },
     ],
     locale: "en-US",
@@ -36,9 +36,8 @@ export default function RootLayout({
       <body className={`font-[-apple-system,BlinkMacSystemFont]antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
-          forcedTheme="light"
           disableTransitionOnChange
         >
           {children}
