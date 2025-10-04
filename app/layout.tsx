@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "../components/provider";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+
 export const metadata: Metadata = {
   title: "HallucentAI - Detect AI Hallucinations in Real-Time",
   description:
@@ -33,7 +36,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-[-apple-system,BlinkMacSystemFont]antialiased`}>
+      <body
+        className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -83,25 +83,34 @@ export default function HeroSection() {
       </div>
 
       <motion.div
-        className="relative z-10 mx-auto w-full max-w-2xl px-6 lg:px-0"
+        className="relative z-10 mx-auto w-full max-w-3xl px-6 lg:px-0"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <div className="relative text-center">
-          <motion.p className="text-3xl" variants={itemVariants}>
-            🛡️
-          </motion.p>
-
-          <motion.h1
-            className="mx-auto mt-12 max-w-xl text-balance text-5xl font-medium md:text-6xl bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-transparent"
+          <motion.div
+            className="inline-flex items-center px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-8"
             variants={itemVariants}
           >
-            Detect AI Hallucinations in Real-Time
+            <span className="text-2xl mr-2">🛡️</span>
+            <span className="text-sm font-medium text-foreground/80">
+              AI Hallucination Detection
+            </span>
+          </motion.div>
+
+          <motion.h1
+            className="mx-auto max-w-4xl text-balance text-5xl font-semibold tracking-tight md:text-7xl bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent leading-[1.1]"
+            variants={itemVariants}
+          >
+            Detect AI Hallucinations in{" "}
+            <span className="bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
+              Real-Time
+            </span>
           </motion.h1>
 
           <motion.p
-            className="text-muted-foreground mx-auto mb-6 mt-4 text-balance text-xl"
+            className="text-muted-foreground mx-auto mb-8 mt-6 text-balance text-lg md:text-xl max-w-2xl leading-relaxed"
             variants={itemVariants}
           >
             HallucentAI ensures your AI-generated content is accurate, reliable,
@@ -109,7 +118,7 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto"
+            className="flex flex-col items-center gap-3 *:w-full sm:flex-row sm:justify-center sm:*:w-auto"
             variants={itemVariants}
           >
             <motion.div
@@ -120,11 +129,11 @@ export default function HeroSection() {
               <Button
                 asChild
                 variant="default"
-                size="sm"
-                className="bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl glow-blue-sm hover:glow-blue-md transition-all duration-200"
+                size="lg"
+                className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white font-medium shadow-lg hover:shadow-xl glow-blue-sm hover:glow-blue-md transition-all duration-300 h-12 px-8"
               >
                 <Link href="/dashboard" prefetch={true}>
-                  <span className="text-nowrap">Get Started</span>
+                  <span className="text-nowrap">Get Started →</span>
                 </Link>
               </Button>
             </motion.div>
@@ -137,8 +146,8 @@ export default function HeroSection() {
               <Button
                 asChild
                 variant="outline"
-                size="sm"
-                className="backdrop-blur-sm"
+                size="lg"
+                className="backdrop-blur-sm border-border/40 hover:bg-accent/50 font-medium h-12 px-8"
               >
                 <Link href="#features">
                   <span className="text-nowrap">Learn More</span>

@@ -154,19 +154,27 @@ export default function PricingTable({
       className="flex flex-col items-center justify-center px-4 mb-24 w-full"
     >
       <motion.div
-        className="text-center mb-12"
+        className="text-center mb-16"
         variants={containerVariants}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
+        <motion.div
+          className="inline-flex items-center px-4 py-1.5 rounded-full border border-primary/20 bg-primary/5 mb-6"
+          variants={headingVariants}
+        >
+          <span className="text-sm font-medium text-foreground/80">
+            Pricing
+          </span>
+        </motion.div>
         <motion.h1
-          className="text-4xl font-medium tracking-tight mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent"
+          className="text-5xl md:text-6xl font-semibold tracking-tight mb-4 bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent leading-[1.1]"
           variants={headingVariants}
         >
           Simple, Transparent Pricing
         </motion.h1>
         <motion.p
-          className="text-xl text-muted-foreground"
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           variants={headingVariants}
         >
           Choose the perfect plan for your AI verification needs.
@@ -192,7 +200,7 @@ export default function PricingTable({
               damping: 20,
             }}
           >
-            <Card className="relative h-fit backdrop-blur-sm bg-card/50 border-2 border-primary/20 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
+            <Card className="relative h-fit backdrop-blur-sm bg-card border border-border/40 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300">
               {isCurrentPlan(STARTER_TIER) && (
                 <motion.div
                   className="absolute -top-3 left-1/2 transform -translate-x-1/2"
@@ -207,23 +215,27 @@ export default function PricingTable({
                 >
                   <Badge
                     variant="secondary"
-                    className="bg-gradient-to-r from-primary to-blue-600 text-white"
+                    className="bg-gradient-to-r from-primary to-blue-600 text-white font-medium"
                   >
                     Current Plan
                   </Badge>
                 </motion.div>
               )}
-              <CardHeader>
-                <CardTitle className="text-2xl">Pro</CardTitle>
-                <CardDescription>
+              <CardHeader className="pb-8">
+                <CardTitle className="text-3xl font-semibold">Pro</CardTitle>
+                <CardDescription className="text-base mt-2">
                   For teams and growing businesses
                 </CardDescription>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold">$25</span>
-                  <span className="text-muted-foreground">/month</span>
+                <div className="mt-6">
+                  <span className="text-5xl font-semibold tracking-tight">
+                    $25
+                  </span>
+                  <span className="text-muted-foreground text-lg font-medium">
+                    /month
+                  </span>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-3 pb-8">
                 {[
                   "10,000 API calls/month",
                   "Multi-model support",
@@ -252,10 +264,15 @@ export default function PricingTable({
                         type: "spring",
                         stiffness: 200,
                       }}
+                      className="flex-shrink-0"
                     >
-                      <Check className="h-5 w-5 text-primary" />
+                      <div className="rounded-full bg-primary/10 p-1">
+                        <Check className="h-4 w-4 text-primary" />
+                      </div>
                     </motion.div>
-                    <span>{feature}</span>
+                    <span className="text-sm font-medium text-foreground/90">
+                      {feature}
+                    </span>
                   </motion.div>
                 ))}
               </CardContent>
@@ -263,7 +280,7 @@ export default function PricingTable({
                 {isCurrentPlan(STARTER_TIER) ? (
                   <div className="w-full space-y-2">
                     <Button
-                      className="w-full"
+                      className="w-full font-medium h-11"
                       variant="outline"
                       onClick={handleManageSubscription}
                     >
@@ -288,12 +305,12 @@ export default function PricingTable({
                     whileTap={{ scale: 0.98 }}
                   >
                     <Button
-                      className="w-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl glow-blue-sm hover:glow-blue-md transition-all duration-200"
+                      className="w-full bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 text-white font-medium shadow-lg hover:shadow-xl glow-blue-sm hover:glow-blue-md transition-all duration-300 h-11"
                       onClick={() => handleCheckout(STARTER_TIER, STARTER_SLUG)}
                     >
                       {isAuthenticated === false
                         ? "Sign In to Get Started"
-                        : "Get Started"}
+                        : "Get Started →"}
                     </Button>
                   </motion.div>
                 )}
@@ -303,10 +320,10 @@ export default function PricingTable({
         </motion.div>
       </motion.div>
 
-      <div className="mt-12 text-center">
-        <p className="text-muted-foreground">
+      <div className="mt-16 text-center">
+        <p className="text-base text-muted-foreground">
           Need a custom plan?{" "}
-          <span className="text-primary cursor-pointer hover:underline">
+          <span className="text-primary cursor-pointer hover:underline font-medium transition-colors">
             Contact us
           </span>
         </p>
