@@ -42,3 +42,10 @@ yarn-error.log*
 next-env.d.ts
 
 AuthKey_8LYJ3Y87D4.p8
+
+# docs
+codegen.md
+plan.md
+README.md
+tech-spec.md
+request.md
